@@ -1,5 +1,8 @@
 {
 	"Тестовый пример": "Test example",
 	"Перевод": "Traslate",
-	"Язык": "English"
+	"Язык": "English",
+	"Страница не найдена": "Page not found",
+	"Произошла непредвиденная ошибка": "An unexpected error occurred",
+	"Обновить страницу": "Update page"
 }
