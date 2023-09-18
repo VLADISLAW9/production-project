@@ -12,11 +12,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
-}  
+}
 
 .lang {
     margin-left: 20px;
-} 
+}
 
 .items {
     margin-top: 20px;
@@ -40,7 +40,7 @@
     opacity: 1;
 }
 
-.collapseBtn{
+.collapseBtn {
     position: absolute;
     right: -32px;
     bottom: 32px;
@@ -51,11 +51,11 @@
 
     .switchers {
         flex-direction: column;
-        align-items: center
+        align-items: center;
     }
 
     .lang {
-        margin-left: 0px    
+        margin-left: 0;
     }
 
     .link {
@@ -64,7 +64,3 @@
         width: 0;
     }
 }
-
-
-
-

@@ -11,7 +11,7 @@
     outline: none;
 }
 
-.outline {   
+.outline {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background: none;
@@ -30,34 +30,35 @@
 }
 
 .square {
-   padding: 0;
+    padding: 0;
 }
 
 .square.size_m {
     width: var(--font-line-m);
     height: var(--font-line-m);
-    font: var(--font-m);   
+    font: var(--font-m);
 }
 
 .square.size_l {
     width: var(--font-line-l);
     height: var(--font-line-l);
-    font: var(--font-l);  
+    font: var(--font-l);
 }
 
 .square.size_xl {
     width: var(--font-line-xl);
     height: var(--font-line-xl);
-    font: var(--font-xl);  
+    font: var(--font-xl);
 }
 
-.size_m{
+.size_m {
     font: var(--font-m);
 }
 
-.size_l{
+.size_l {
     font: var(--font-l);
 }
-.size_xl{
+
+.size_xl {
     font: var(--font-xl);
 }
