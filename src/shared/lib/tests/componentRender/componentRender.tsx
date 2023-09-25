@@ -16,6 +16,7 @@ export function componentRender(component: ReactNode, options: componentRenderOp
         route = '/',
         initialState,
     } = options;
+
     return render(
         <StoreProvider initialState={initialState}>
             <MemoryRouter initialEntries={[route]}>
