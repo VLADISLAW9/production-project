@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { ProfileSchema } from '../types/profile';
 
 const initialState: ProfileSchema = {
-    isLoading: false,
     readonly: true,
+    isLoading: false,
     error: undefined,
     data: undefined,
 };

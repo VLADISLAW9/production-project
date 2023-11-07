@@ -18,8 +18,8 @@ export const StoreProvider = (props: StoreProviderProps) => {
     } = props;
 
     const store = createReduxStore(
-       initialState as StateSchema,
-       asyncReducers as ReducersMapObject<StateSchema>,
+        initialState as StateSchema,
+        asyncReducers as ReducersMapObject<StateSchema>,
     );
 
     return (

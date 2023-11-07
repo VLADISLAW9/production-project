@@ -4,7 +4,11 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -13,9 +17,13 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+    ],
     rules: {
-        'linebreak-style': 0,
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
@@ -25,7 +33,7 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -44,9 +52,9 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
-        'react/button-has-type': 'off',
-        'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'error',
+        'linebreak-style': 'off',
+        'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies,
         'no-param-reassign': 'off',
     },
     globals: {

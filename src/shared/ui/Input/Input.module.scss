@@ -8,11 +8,11 @@
 
 .input {
     background: transparent;
-    color: transparent;
-    text-shadow: 0 0 0 var(--primary-color);
     border: none;
     outline: none;
     width: 100%;
+    color: transparent;
+    text-shadow: 0 0 0 var(--primary-color);
 
     &:focus {
         outline: none;
@@ -31,7 +31,7 @@
     bottom: 0;
     left: 0;
     position: absolute;
-    animation: blink 1s forwards infinite;
+    animation: blink 0.7s forwards infinite;
 }
 
 @keyframes blink {

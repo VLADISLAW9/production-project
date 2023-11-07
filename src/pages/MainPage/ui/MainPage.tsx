@@ -9,6 +9,7 @@ const MainPage = () => {
     const onChange = (val: string) => {
         setValue(val);
     };
+
     return (
         <div>
             {t('Главная страница')}
