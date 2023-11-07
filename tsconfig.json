@@ -38,5 +38,5 @@
 			"module": "CommonJS"
 		}
 	},
-	"include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
+	"include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx", "src/widgets/Sidebar/model/items.ts"]
 }
