@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "first": "Тимур",
-    "lastname": "Ульби",
+    "first": "Тимур123",
+    "lastname": "Ульби123",
     "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
+    "currency": "EUR",
+    "country": "Armenia",
     "city": "Moscow",
     "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    "avatar": "https://instasize.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fmunkee%2Fimage%2Fupload%2Fv1684429921%2Finstasize-website%2Flearn%2Ffox-sunglasses-avatar.webp&w=828&q=75"
   }
 }
