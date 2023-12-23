@@ -9,8 +9,8 @@ export enum TextTheme {
 
 export enum TextAlign {
     RIGHT = 'right',
+    LEFT = 'left',
     CENTER = 'center',
-    LEFT = 'left'
 }
 
 interface TextProps {
@@ -18,7 +18,7 @@ interface TextProps {
     title?: string;
     text?: string;
     theme?: TextTheme;
-    align?: TextAlign,
+    align?: TextAlign;
 }
 
 export const Text = memo((props: TextProps) => {

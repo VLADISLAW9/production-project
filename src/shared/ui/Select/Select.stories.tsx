@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Select } from './Select';
+import { Select } from 'shared/ui/Select/Select';
 
 export default {
     title: 'shared/Select',
@@ -14,10 +14,9 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    label: 'Выберите значение',
+    label: 'Укажите значение',
     options: [
-        { value: '1', content: 'Первый пункт' },
-        { value: '2', content: 'Второй пункт' },
-        { value: '3', content: 'Третий пункт' },
+        { value: '123', content: 'Первый пункт' },
+        { value: '1234', content: 'Второй пункт' },
     ],
 };
