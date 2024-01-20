@@ -34,7 +34,7 @@ export const Text = memo((props: TextProps) => {
         title,
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
-        size = TextSize.L,
+        size = TextSize.M,
     } = props;
 
     const mods: Mods = {
