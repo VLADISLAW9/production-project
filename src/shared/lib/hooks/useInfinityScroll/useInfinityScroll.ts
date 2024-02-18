@@ -11,6 +11,8 @@ export function useInfinityScroll(props: UseInfinityScrollOptions) {
 
     useEffect(() => {
         let observer: IntersectionObserver | null = null;
+        const wrapperElement = wrapperRef.current;
+        const triggerElement = triggerRef.current;
 
         if (callback) {
             const options = {
@@ -26,13 +28,13 @@ export function useInfinityScroll(props: UseInfinityScrollOptions) {
             }, options);
 
             observer.observe(triggerRef.current);
-
-            return () => {
-                if (observer) {
-                    // eslint-disable-next-line react-hooks/exhaustive-deps
-                    observer.unobserve(triggerRef.current);
-                }
-            };
         }
+
+        return () => {
+            if (observer && triggerElement) {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+                observer.unobserve(triggerElement);
+            }
+        };
     }, [triggerRef, wrapperRef, callback]);
 }
