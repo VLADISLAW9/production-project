@@ -1,8 +1,8 @@
-@import "reset";
-@import "variables/global";
-@import "themes/normal";
-@import "themes/dark";
-@import "themes/orange";
+@import 'reset';
+@import 'variables/global';
+@import 'themes/normal';
+@import 'themes/dark';
+@import 'themes/orange';
 
 .app,
 .app_modal {
@@ -17,12 +17,4 @@
 
 .content-page {
     display: flex;
-}
-
-.page-wrapper {
-    flex-grow: 1;
-    padding: 20px 20px 20px 45px;
-    height: calc(100vh - var(--navbar-height));
-    overflow-y: auto;
-    flex-shrink: 100;
 }
