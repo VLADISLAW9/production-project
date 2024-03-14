@@ -10,6 +10,7 @@ import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ScrollSaveSchema } from 'features/ScrollSave';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { To } from 'history';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
@@ -20,6 +21,7 @@ import { CombinedState } from 'redux';
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    ui: ScrollSaveSchema
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
