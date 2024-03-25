@@ -23,8 +23,8 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
-    const readonly = useSelector(getProfileReadonly);
     const canEdit = authData?.id === profileData?.id;
+    const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
 
     const onEdit = useCallback(() => {
@@ -74,7 +74,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                         )}
                 </div>
             )}
-
         </div>
     );
 };

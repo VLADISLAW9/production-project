@@ -1,6 +1,8 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Article, ArticleView } from '../../model/types/article';
+
 import { ArticleListItem } from './ArticleListItem';
+import { Article, ArticleView } from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleListItem',
@@ -10,23 +12,26 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => (
-    <ArticleListItem {...args} />
-);
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
 const article = {
     id: '1',
-    title: 'Javascript news as das dsad sa',
+    title: 'Javascript news asfasjf asfjkask f',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
+    createdAt: '26.02.2022',
     user: {
         id: '1',
-        username: 'Sam',
-        avatar: 'https://i.imgur.com/rBQq49N.png',
+        username: 'Ulbi tv',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
-    createdAt: '26.02.2022',
-    type: ['IT', 'SCIENCE', 'ECONOMICS', 'ECONOMICS'],
+    type: [
+        'IT',
+        'SCIENCE',
+        'POLITICS',
+        'ECONOMICS',
+    ],
     blocks: [
         {
             id: '1',

@@ -3,7 +3,7 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
 import { CombinedState, Reducer } from 'redux';
-import { ScrollSaveFormReducer, ScrollSaveFormSlice } from 'features/ScrollSave/model/slices/ScrollSaveSlice';
+import { uiReducer } from 'features/UI';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
@@ -15,7 +15,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
-        ui: ScrollSaveFormReducer,
+        ui: uiReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

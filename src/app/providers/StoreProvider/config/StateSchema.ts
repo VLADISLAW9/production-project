@@ -1,27 +1,24 @@
-import {
-    AnyAction,
-    EnhancedStore,
-    Reducer,
-    ReducersMapObject,
-} from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
-import { ArticleDetailsSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
-import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
-import { ScrollSaveSchema } from 'features/ScrollSave';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { To } from 'history';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { NavigateOptions } from 'react-router';
+import {
+    AnyAction, EnhancedStore, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
+import { ProfileSchema } from 'entities/Profile';
+import { AxiosInstance } from 'axios';
+import { To } from 'history';
+import { NavigateOptions } from 'react-router';
+import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { AddCommentFormSchema } from 'features/addCommentForm';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { UISchema } from 'features/UI';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
-    ui: ScrollSaveSchema
+    ui: UISchema;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;

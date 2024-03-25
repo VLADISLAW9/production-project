@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
 
@@ -22,8 +22,7 @@ describe('fetchNextArticlesPage.test', () => {
         expect(thunk.dispatch).toBeCalledTimes(4);
         expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
     });
-
-    test('fetchArticleList not called', async () => {
+    test('fetchAritcleList not called', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
             articlesPage: {
                 page: 2,

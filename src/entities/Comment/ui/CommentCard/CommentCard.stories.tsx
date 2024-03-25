@@ -1,7 +1,6 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { CommentCard } from './CommentCard';
 
 export default {
@@ -18,15 +17,17 @@ export const Normal = Template.bind({});
 Normal.args = {
     comment: {
         id: '1',
-        text: 'Hello World',
-        user: {
-            id: '1',
-            username: 'Masha',
-        },
+        text: 'hello world',
+        user: { id: '1', username: 'Vasya' },
     },
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
+    comment: {
+        id: '1',
+        text: 'hello world',
+        user: { id: '1', username: 'Vasya' },
+    },
     isLoading: true,
 };
