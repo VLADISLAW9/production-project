@@ -19,7 +19,6 @@
     display: flex;
 }
 
-
 *::-webkit-scrollbar {
     width: 12px;
     height: 8px;
@@ -32,5 +31,5 @@
 *::-webkit-scrollbar-thumb {
     background: var(--inverted-primary-color);
     border-radius: 20px;
-    border: 2px solid var(--primary-color)
+    border: 2px solid var(--primary-color);
 }
