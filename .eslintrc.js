@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'vladislaw9-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -58,6 +59,7 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'linebreak-style': 'off',
+        'vladislaw9-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

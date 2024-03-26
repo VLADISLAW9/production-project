@@ -3,8 +3,8 @@ import React, {
     MutableRefObject,
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { Portal } from '../../ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
