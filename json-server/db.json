@@ -613,6 +613,12 @@
       "userId": "1",
       "text": "123",
       "id": "nDN5LsH"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "12312",
+      "id": "gDtwZgr"
     }
   ],
   "users": [
@@ -634,11 +640,11 @@
   "profile": [
     {
       "id": "1",
-      "first": "jghwer",
+      "first": "jghwe32132131",
       "lastname": "asfewr",
       "age": 465,
-      "currency": "EUR",
-      "country": "Kazahstan",
+      "currency": "RUB",
+      "country": "Russia",
       "city": "Moscow",
       "username": "admin213",
       "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
