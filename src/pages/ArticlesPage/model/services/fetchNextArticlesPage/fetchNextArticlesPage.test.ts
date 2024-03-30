@@ -6,7 +6,16 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('fetchNextArticlesPage.test', () => {
     test('success', async () => {
-        const thunk = new TestAsyncThunk(fetchNextArticlesPage);
+        const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+            articlesPage: {
+                page: 2,
+                ids: [],
+                entities: {},
+                limit: 5,
+                isLoading: false,
+                hasMore: true,
+            },
+        });
 
         await thunk.callThunk();
 
