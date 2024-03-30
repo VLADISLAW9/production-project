@@ -27,7 +27,7 @@ const articlesPageSlice = createSlice({
         page: 1,
         hasMore: true,
         _inited: false,
-        limit: 9,
+        limit: 12,
         sort: ArticleSortField.CREATED,
         search: '',
         order: 'asc',

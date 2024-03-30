@@ -15,7 +15,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { t } = useTranslation();
     const { data: articles, isLoading, error } = useArticleRecommendationsList(5);
 
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         return null;
     }
 
@@ -26,6 +26,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
                 title={t('Рекомендации')}
             />
             <ArticleList
+                virtualized={false}
                 articles={articles}
                 target="_blank"
             />
