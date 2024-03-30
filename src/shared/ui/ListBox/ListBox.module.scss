@@ -11,7 +11,6 @@
 }
 
 .options {
-    min-width: 100%;
     background-color: var(--listbox-bg);
     position: absolute;
     z-index: 10000;
@@ -31,6 +30,22 @@
     opacity: 0.7;
 }
 
-.optionsTop {
+.optionsBottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    left: 0;
+}
+
+.optionsTopLeft {
     bottom: 100%;
+    right: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
 }

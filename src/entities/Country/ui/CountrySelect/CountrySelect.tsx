@@ -31,7 +31,7 @@ export const CountrySelect = memo(({
 
     return (
         <ListBox
-            direction="top"
+            direction="top right"
             readonly={readonly}
             className={classNames('', {}, [className])}
             value={value}
