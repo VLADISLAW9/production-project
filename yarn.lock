@@ -3383,6 +3383,14 @@
   dependencies:
     "@types/node" "*"
 
+"@types/circular-dependency-plugin@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.npmjs.org/@types/circular-dependency-plugin/-/circular-dependency-plugin-5.0.8.tgz"
+  integrity sha512-P9nspqZxy+9NsoS4KOG5p1JFss0n0pv8UHD8OAP7bz4lAkgtdAnOS0J0ZXlcqzekWdUtmCFwpIuW+AtOhFp8VA==
+  dependencies:
+    "@types/node" "*"
+    webpack "^5.1.0"
+
 "@types/color-convert@^2.0.0":
   version "2.0.3"
   resolved "https://registry.npmjs.org/@types/color-convert/-/color-convert-2.0.3.tgz"
@@ -5679,6 +5687,11 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
+
+circular-dependency-plugin@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.npmjs.org/circular-dependency-plugin/-/circular-dependency-plugin-5.2.2.tgz"
+  integrity sha512-g38K9Cm5WRwlaH6g03B9OEz/0qRizI+2I7n+Gz+L5DxXJAPAiWQvwlYNm1V1jkdpUv95bOe/ASm2vfi/G560jQ==
 
 cjs-module-lexer@^1.0.0:
   version "1.2.2"
@@ -15824,7 +15837,7 @@ webpack-virtual-modules@^0.4.1:
   resolved "https://registry.npmjs.org/webpack-virtual-modules/-/webpack-virtual-modules-0.4.3.tgz"
   integrity sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==
 
-webpack@*, "webpack@^4.0.0 || ^5.0.0", "webpack@^4.27.0 || ^5.0.0", "webpack@^4.37.0 || ^5.0.0", webpack@^5, webpack@^5.0.0, webpack@^5.1.0, webpack@^5.20.0, webpack@^5.69.1, webpack@^5.9.0, "webpack@>= 4", webpack@>=2, "webpack@>=4.43.0 <6.0.0", "webpack@4.x.x || 5.x.x":
+webpack@*, "webpack@^4.0.0 || ^5.0.0", "webpack@^4.27.0 || ^5.0.0", "webpack@^4.37.0 || ^5.0.0", webpack@^5, webpack@^5.0.0, webpack@^5.1.0, webpack@^5.20.0, webpack@^5.69.1, webpack@^5.9.0, "webpack@>= 4", webpack@>=2, webpack@>=4.0.1, "webpack@>=4.43.0 <6.0.0", "webpack@4.x.x || 5.x.x":
   version "5.69.1"
   resolved "https://registry.npmjs.org/webpack/-/webpack-5.69.1.tgz"
   integrity sha512-+VyvOSJXZMT2V5vLzOnDuMz5GxEqLk7hKWQ56YxPW/PQRUuKimPqmEIJOx8jHYeyo65pKbapbW464mvsKbaj4A==
