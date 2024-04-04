@@ -1,4 +1,4 @@
-.triggger {
+.trigger {
     background: none;
     border: none;
     outline: none;
@@ -7,7 +7,7 @@
 }
 
 .options {
-    background-color: var(--listbox-bg);
+    background: var(--listbox-bg);
     position: absolute;
     z-index: 10000;
     border-radius: 12px;

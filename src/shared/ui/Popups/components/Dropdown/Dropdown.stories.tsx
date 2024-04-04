@@ -1,7 +1,8 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Dropdown } from './Dropdown';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Button } from '../../../Button/Button';
+import { Dropdown } from './Dropdown';
 
 export default {
     title: 'shared/Dropdown',
@@ -17,9 +18,14 @@ export const Normal = Template.bind({});
 Normal.args = {
     trigger: <Button>Open</Button>,
     items: [
-        { content: 'Home' },
-        { content: 'Settings' },
-        { content: 'Exit' },
-        { content: 'About Us' },
+        {
+            content: 'first',
+        },
+        {
+            content: 'second',
+        },
+        {
+            content: 'third',
+        },
     ],
 };

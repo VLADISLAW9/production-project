@@ -2,39 +2,39 @@
     position: relative;
 }
 
-.active {
-    background: var(--inverted-primary-color);
-}
-
 .trigger {
-    cursor: pointer;
     background: none;
     outline: none;
     margin: 0;
     padding: 0;
     border: none;
+    cursor: pointer;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+}
+
+.optionsBottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    left: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
+}
+
+.optionsTopLeft {
+    right: 0;
+    bottom: 100%;
 }
 
 .disabled {
     opacity: 0.7;
-}
-
-.menuBottomLeft {
-    top: 100%;
-    right: 0;
-}
-
-.menuBottomRight {
-    top: 100%;
-    left: 0;
-}
-
-.menuTopLeft {
-    bottom: 100%;
-    right: 0;
-}
-
-.menuTopRight {
-    bottom: 100%;
-    left: 0;
 }

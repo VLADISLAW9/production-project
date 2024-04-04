@@ -1,20 +1,17 @@
 import {
-    MutableRefObject,
-    useCallback,
-    useEffect,
-    useRef,
-    useState,
+    MutableRefObject, useCallback, useEffect, useRef, useState,
 } from 'react';
+import { useTheme } from '@/app/providers/ThemeProvider';
 
-interface useModalProps {
-  onClose?: () => void;
-  isOpen?: boolean;
-  animationDelay: number;
+interface UseModalProps {
+    onClose?: () => void;
+    isOpen?: boolean;
+    animationDelay: number;
 }
 
 export function useModal({
     animationDelay, isOpen, onClose,
-}: useModalProps) {
+}: UseModalProps) {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;

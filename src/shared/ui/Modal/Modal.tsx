@@ -1,12 +1,10 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { ReactNode } from 'react';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
-import { useDrag } from '@use-gesture/react';
-import { a, useSpring, config } from '@react-spring/web';
-import { Portal } from '../../ui/Portal/Portal';
-import cls from './Modal.module.scss';
+import React, { ReactNode } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
+import cls from './Modal.module.scss';
 
 interface ModalProps {
     className?: string;
@@ -52,7 +50,9 @@ export const Modal = (props: ModalProps) => {
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
                 <Overlay onClick={close} />
-                <div className={cls.content}>
+                <div
+                    className={cls.content}
+                >
                     {children}
                 </div>
             </div>

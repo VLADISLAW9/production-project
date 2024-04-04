@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import withMock from 'storybook-addon-mock';
-import { Article } from 'entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article } from '@/entities/Article';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 export default {
@@ -18,18 +19,14 @@ const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <A
 
 const article: Article = {
     id: '1',
-    title: 'Article Title',
-    createdAt: '',
-    blocks: [],
     img: '',
-    subtitle: 'adsfadsfds',
-    type: [],
-    user: {
-        id: '1',
-        username: 'User Name',
-    },
+    createdAt: '',
     views: 123,
-
+    user: { id: '1', username: '123' },
+    blocks: [],
+    type: [],
+    title: '123',
+    subtitle: 'asfsa',
 };
 
 export const Normal = Template.bind({});

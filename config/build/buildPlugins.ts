@@ -40,6 +40,7 @@ export function buildPlugins({
                     semantic: true,
                     syntactic: true,
                 },
+                mode: 'write-references',
             },
         }),
     ];

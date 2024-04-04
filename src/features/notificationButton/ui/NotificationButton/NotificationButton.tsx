@@ -1,34 +1,34 @@
-import { memo, useCallback, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Popover } from 'shared/ui/Popups';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { NotificationList } from 'entities/Notification/ui/NotificationList/NotificationList';
-import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
+import React, { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
+import { NotificationList } from '@/entities/Notification';
+import { Popover } from '@/shared/ui/Popups';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
-  className?: string
+    className?: string;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
     const { className } = props;
-    const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const onOpenDrawer = useCallback(() => {
-        setIsOpenDrawer(true);
+        setIsOpen(true);
     }, []);
 
     const onCloseDrawer = useCallback(() => {
-        setIsOpenDrawer(false);
+        setIsOpen(false);
     }, []);
 
     const trigger = (
         <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
-            <Icon inverted Svg={NotificationIcon} />
+            <Icon Svg={NotificationIcon} inverted />
         </Button>
     );
 
@@ -40,19 +40,16 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                     direction="bottom left"
                     trigger={trigger}
                 >
-                    <NotificationList
-                        className={cls.notifications}
-                    />
+                    <NotificationList className={cls.notifications} />
                 </Popover>
             </BrowserView>
             <MobileView>
                 {trigger}
-                <AnimationProvider>
-                    <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
-                        <NotificationList />
-                    </Drawer>
-                </AnimationProvider>
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                    <NotificationList />
+                </Drawer>
             </MobileView>
         </div>
+
     );
 });

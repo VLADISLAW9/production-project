@@ -1,29 +1,29 @@
 import { Menu } from '@headlessui/react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
-import { DropdownDirection } from 'shared/types/ui';
-import cls from './Dropdown.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { AppLink } from '../../../AppLink/AppLink';
+import cls from './Dropdown.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
-  content: ReactNode
-  disabled?: boolean
-  onClick?: () => void
-  href?: string
+    disabled?: boolean;
+    content?: ReactNode;
+    onClick?: () => void;
+    href?: string;
 }
 
 interface DropdownProps {
-  className?: string
-  items: DropdownItem[]
-  trigger: ReactNode
-  direction?: DropdownDirection
+    className?: string;
+    items: DropdownItem[];
+    direction?: DropdownDirection;
+    trigger: ReactNode;
 }
 
 export function Dropdown(props: DropdownProps) {
     const {
-        className, items, trigger, direction = 'bottom right',
+        className, trigger, items, direction = 'bottom right',
     } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
@@ -45,19 +45,22 @@ export function Dropdown(props: DropdownProps) {
                             {item.content}
                         </button>
                     );
+
                     if (item.href) {
                         return (
                             <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
-                                { content }
+                                {content}
                             </Menu.Item>
                         );
                     }
+
                     return (
                         <Menu.Item as={Fragment} disabled={item.disabled}>
-                            { content }
+                            {content}
                         </Menu.Item>
                     );
                 })}
+
             </Menu.Items>
         </Menu>
     );

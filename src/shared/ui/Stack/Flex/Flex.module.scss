@@ -3,7 +3,7 @@
 }
 
 .justifyStart {
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .justifyCenter {
@@ -11,7 +11,7 @@
 }
 
 .justifyEnd {
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .justifyBetween {
@@ -19,7 +19,7 @@
 }
 
 .alignStart {
-    align-items: start;
+    align-items: flex-start;
 }
 
 .alignCenter {
@@ -27,7 +27,7 @@
 }
 
 .alignEnd {
-    align-items: end;
+    align-items: flex-end;
 }
 
 .directionRow {

@@ -1,9 +1,10 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { NotificationItem } from './NotificationItem';
 
 export default {
-    title: 'entities/NotificationItem',
+    title: 'shared/NotificationItem',
     component: NotificationItem,
     argTypes: {
         backgroundColor: { control: 'color' },

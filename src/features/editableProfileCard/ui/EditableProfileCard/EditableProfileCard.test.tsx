@@ -1,10 +1,10 @@
-import { screen } from '@testing-library/react';
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
-import { Profile } from 'entities/Profile';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { $api } from 'shared/api/api';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { Profile } from '@/entities/Profile';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { $api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
 
@@ -12,11 +12,11 @@ const profile: Profile = {
     id: '1',
     first: 'admin',
     lastname: 'admin',
-    age: 1,
-    currency: Currency.RUB,
-    country: Country.Russia,
-    city: 'Tomsk',
-    username: 'admin123',
+    age: 465,
+    currency: Currency.USD,
+    country: Country.Kazakhstan,
+    city: 'Moscow',
+    username: 'admin213',
 };
 
 const options = {
@@ -36,10 +36,9 @@ const options = {
 };
 
 describe('features/EditableProfileCard', () => {
-    test('Режим readonly должен переключиться', async () => {
+    test('Режим рид онли должен переключиться', async () => {
         componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
-
         expect(screen.getByTestId('EditableProfileCardHeader.CancelButton')).toBeInTheDocument();
     });
 
@@ -73,7 +72,7 @@ describe('features/EditableProfileCard', () => {
         expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument();
     });
 
-    test('Если нет ошибок, то должен уйти запрос на сервер', async () => {
+    test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
         const mockPutReq = jest.spyOn($api, 'put');
         componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));

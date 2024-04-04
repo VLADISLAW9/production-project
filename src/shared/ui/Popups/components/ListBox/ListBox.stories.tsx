@@ -1,12 +1,7 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ListBox } from './ListBox';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-const people = [
-    { value: '1', content: 'Person 1' },
-    { value: '2', content: 'Person 2' },
-    { value: '3', content: 'Person 3' },
-];
+import { ListBox } from './ListBox';
 
 export default {
     title: 'shared/ListBox',
@@ -15,7 +10,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
-        (Story) => <div style={{ padding: 200 }}><Story /></div>,
+        (Story) => <div style={{ padding: 100 }}><Story /></div>,
     ],
 } as ComponentMeta<typeof ListBox>;
 
@@ -23,41 +18,49 @@ const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />
 
 export const Normal = Template.bind({});
 Normal.args = {
-    items: people,
-    defaultValue: 'Выберите пользователя',
-};
-
-export const Readonly = Template.bind({});
-Readonly.args = {
-    items: people,
-    defaultValue: 'Выберите пользователя',
-    readonly: true,
+    value: '123',
+    items: [
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
+    ],
 };
 
 export const topLeft = Template.bind({});
 topLeft.args = {
-    items: people,
     direction: 'top left',
-    defaultValue: 'Выберите пользователя',
+    value: '123',
+    items: [
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
+    ],
 };
 
 export const topRight = Template.bind({});
 topRight.args = {
-    items: people,
     direction: 'top right',
-    defaultValue: 'Выберите пользователя',
+    value: '123',
+    items: [
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
+    ],
 };
 
 export const bottomLeft = Template.bind({});
 bottomLeft.args = {
-    items: people,
     direction: 'bottom left',
-    defaultValue: 'Выберите пользователя',
+    value: '123',
+    items: [
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
+    ],
 };
 
 export const bottomRight = Template.bind({});
 bottomRight.args = {
-    items: people,
     direction: 'bottom right',
-    defaultValue: 'Выберите пользователя',
+    value: '123',
+    items: [
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
+    ],
 };
