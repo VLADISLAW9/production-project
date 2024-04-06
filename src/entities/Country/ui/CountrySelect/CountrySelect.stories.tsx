@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { CountrySelect } from './CountrySelect';
 
 export default {
-    title: 'component/CountrySelect',
+    title: 'entities/Country/CountrySelect',
     component: CountrySelect,
     argTypes: {
         backgroundColor: { control: 'color' },
