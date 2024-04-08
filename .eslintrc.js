@@ -70,8 +70,14 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
-        'vladislaw9-plugin/path-checker': ['error', { alias: '@' }],
         'linebreak-style': 'off',
+        'vladislaw9-plugin/path-checker': ['error', { alias: '@' }],
+        'vladislaw9-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.story.**'],
+            }],
     },
     globals: {
         __IS_DEV__: true,
