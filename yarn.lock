@@ -7289,10 +7289,10 @@ eslint-plugin-react@^7.28.0, eslint-plugin-react@^7.29.2:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
 
-eslint-plugin-vladislaw9-plugin@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/eslint-plugin-vladislaw9-plugin/-/eslint-plugin-vladislaw9-plugin-0.0.3.tgz"
-  integrity sha512-CTz+a6aHmX9mUZp8EDfBXaJCIcRDvvFO1z0TuRE3sZhXRGnEbhB7338V/JLr7OGpz58eBLRWFDA3Jwu1xmUTiw==
+eslint-plugin-vladislaw9-plugin@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/eslint-plugin-vladislaw9-plugin/-/eslint-plugin-vladislaw9-plugin-0.0.6.tgz"
+  integrity sha512-Tl13AMfXVH5CmTIo06525EZbawymLRrcvtOkufQMZv/QMwqfB7gujVCfhBSm43AE79X+W71k+c6hPG5hQ1ycxA==
   dependencies:
     micromatch "^4.0.5"
     requireindex "^1.2.0"

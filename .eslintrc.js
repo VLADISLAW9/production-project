@@ -78,6 +78,12 @@ module.exports = {
                 alias: '@',
                 testFilesPatterns: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.story.**'],
             }],
+        'vladislaw9-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            }],
     },
     globals: {
         __IS_DEV__: true,
