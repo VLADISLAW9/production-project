@@ -7296,10 +7296,10 @@ eslint-plugin-unused-imports@^3.1.0:
   dependencies:
     eslint-rule-composer "^0.3.0"
 
-eslint-plugin-vladislaw9-plugin@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/eslint-plugin-vladislaw9-plugin/-/eslint-plugin-vladislaw9-plugin-0.0.6.tgz"
-  integrity sha512-Tl13AMfXVH5CmTIo06525EZbawymLRrcvtOkufQMZv/QMwqfB7gujVCfhBSm43AE79X+W71k+c6hPG5hQ1ycxA==
+eslint-plugin-vladislaw9-plugin@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/eslint-plugin-vladislaw9-plugin/-/eslint-plugin-vladislaw9-plugin-0.0.7.tgz"
+  integrity sha512-mkw4CYLnOjx6dtPBlSgbibs/vkWL7l/djaQfp92EviMCll6QPSJ0cAbK02N05uSadRAZJ0CAZOmshmJS2sJkWQ==
   dependencies:
     micromatch "^4.0.5"
     requireindex "^1.2.0"
