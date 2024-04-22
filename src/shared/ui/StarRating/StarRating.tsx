@@ -5,23 +5,20 @@ import { Icon } from '../Icon/Icon';
 import StarIcon from '@/shared/assets/icons/star.svg';
 
 interface StarRatingProps {
-  className?: string
-  onSelect?: (starsCount: number) => void
-  size?: number
-  selectedStars?: number
+    className?: string;
+    onSelect?: (starsCount: number) => void;
+    size?: number;
+    selectedStars?: number;
 }
 
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
     const {
-        className,
-        onSelect,
-        selectedStars = 0,
-        size = 30,
+        className, size = 30, selectedStars = 0, onSelect,
     } = props;
-    const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
+    const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
     const onHover = (starsCount: number) => () => {
         if (!isSelected) {
@@ -37,9 +34,9 @@ export const StarRating = memo((props: StarRatingProps) => {
 
     const onClick = (starsCount: number) => () => {
         if (!isSelected) {
+            onSelect?.(starsCount);
             setCurrentStarsCount(starsCount);
             setIsSelected(true);
-            onSelect?.(starsCount);
         }
     };
 
@@ -59,6 +56,8 @@ export const StarRating = memo((props: StarRatingProps) => {
                     onMouseLeave={onLeave}
                     onMouseEnter={onHover(starNumber)}
                     onClick={onClick(starNumber)}
+                    data-testid={`StarRating.${starNumber}`}
+                    data-selected={currentStarsCount >= starNumber}
                 />
             ))}
         </div>

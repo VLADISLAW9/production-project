@@ -1,16 +1,16 @@
-import { Rating } from '@/entities/Rating';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { Rating } from '@/entities/Rating';
 
 interface GetArticleRatingArg {
-    userId: string
-    articleId: string
+    userId: string;
+    articleId: string;
 }
 
 interface RateArticleArg {
-    userId: string
-    articleId: string
-    rate: number
-    feedback?: string
+    userId: string;
+    articleId: string;
+    rate: number;
+    feedback?: string;
 }
 
 const articleRatingApi = rtkApi.injectEndpoints({

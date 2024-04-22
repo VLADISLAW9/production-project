@@ -6,10 +6,10 @@
     fill: none;
 }
 
-.selected {
-    cursor: auto;
-}
-
 .hovered {
     fill: var(--primary-color);
+}
+
+.selected {
+    cursor: auto;
 }

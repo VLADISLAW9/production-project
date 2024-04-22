@@ -1,10 +1,10 @@
 import { CSSProperties, useMemo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
+import { AppImage } from '../AppImage';
 import UserIcon from '../../assets/icons/user-filled.svg';
 import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
-import { AppImage } from '../AppImage';
 
 interface AvatarProps {
     className?: string;
@@ -17,7 +17,7 @@ interface AvatarProps {
 export const Avatar = ({
     className,
     src,
-    size,
+    size = 100,
     alt,
     fallbackInverted,
 }: AvatarProps) => {

@@ -1,7 +1,6 @@
-import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
@@ -12,23 +11,23 @@ import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
 
 interface RatingCardProps {
-  className?: string
-  title?: string
-  feedbackTitle?: string
-  hasFeedback?: boolean
-  onCancel?: (starsCount: number) => void
-  onAccept?: (starsCount: number, feedback?: string) => void
-  rate?: number
+    className?: string;
+    title?: string;
+    feedbackTitle?: string;
+    hasFeedback?: boolean;
+    onCancel?: (starsCount: number) => void;
+    onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
     const {
         className,
-        title,
+        onAccept,
         feedbackTitle,
         hasFeedback,
-        onAccept,
         onCancel,
+        title,
         rate = 0,
     } = props;
     const { t } = useTranslation();
@@ -61,6 +60,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 title={feedbackTitle}
             />
             <Input
+                data-testid="RatingCard.Input"
                 value={feedback}
                 onChange={setFeedback}
                 placeholder={t('Ваш отзыв')}
@@ -69,27 +69,38 @@ export const RatingCard = memo((props: RatingCardProps) => {
     );
 
     return (
-        <Card fullWidth className={classNames('', {}, [className])}>
+        <Card className={className} max data-testid="RatingCard">
             <VStack align="center" gap="8" max>
-                <Text title={starsCount ? t('Спасибо за оценку') : title} />
+                <Text title={starsCount ? t('Спасибо за оценку!') : title} />
                 <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
-                    <VStack gap="32">
+                    <VStack max gap="32">
                         {modalContent}
-                        <HStack justify="end" max gap="16">
-                            <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>{t('Закрыть')}</Button>
-                            <Button onClick={acceptHandle}>{t('Отправить')}</Button>
+                        <HStack max gap="16" justify="end">
+                            <Button
+                                data-testid="RatingCard.Close"
+                                onClick={cancelHandle}
+                                theme={ButtonTheme.OUTLINE_RED}
+                            >
+                                {t('Закрыть')}
+                            </Button>
+                            <Button
+                                data-testid="RatingCard.Send"
+                                onClick={acceptHandle}
+                            >
+                                {t('Отправить')}
+                            </Button>
                         </HStack>
                     </VStack>
                 </Modal>
             </BrowserView>
             <MobileView>
-                <Drawer isOpen={isModalOpen} lazy>
+                <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
                     <VStack gap="32">
                         {modalContent}
-                        <Button size={ButtonSize.L} onClick={acceptHandle}>
+                        <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
                             {t('Отправить')}
                         </Button>
                     </VStack>

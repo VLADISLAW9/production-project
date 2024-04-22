@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import AppRouter from './AppRouter';
-import { getRouteAbout, getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
 
 describe('app/router/AppRouter', () => {
-    test('Страница должна отредериться', async () => {
+    test('Страница должна отрендериться', async () => {
         componentRender(<AppRouter />, {
             route: getRouteAbout(),
         });
@@ -16,14 +16,14 @@ describe('app/router/AppRouter', () => {
 
     test('Страница не найдена', async () => {
         componentRender(<AppRouter />, {
-            route: '/pedro-pedro-pedrooo',
+            route: '/asfasfasfasf',
         });
 
         const page = await screen.findByTestId('NotFoundPage');
         expect(page).toBeInTheDocument();
     });
 
-    test('Редирект не авторизированного пользователя на главную', async () => {
+    test('Редирект неавторизованного пользователя на главную', async () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
         });
@@ -32,7 +32,7 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ к закрытой странице для авторизированного пользователя', async () => {
+    test('Доступ к закрытой страницы для авторизованного пользователя', async () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
@@ -44,9 +44,9 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ запрещен (отсутствует нужная роль для входа)', async () => {
+    test('Доступ запрещен (отсутствует роль)', async () => {
         componentRender(<AppRouter />, {
-            route: getRouteAdminPanel(),
+            route: getRouteAdmin(),
             initialState: {
                 user: { _inited: true, authData: {} },
             },
@@ -56,9 +56,9 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ разрешен (роль имеется)', async () => {
+    test('Доступ разрешен (присутствует роль)', async () => {
         componentRender(<AppRouter />, {
-            route: getRouteAdminPanel(),
+            route: getRouteAdmin(),
             initialState: {
                 user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
             },

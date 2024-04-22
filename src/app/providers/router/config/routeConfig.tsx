@@ -1,4 +1,3 @@
-import { UserRole } from '@/entities/User';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { ProfilePage } from '@/pages/ProfilePage';
@@ -6,17 +5,18 @@ import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { UserRole } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import {
     AppRoutes,
     getRouteAbout,
-    getRouteAdminPanel,
+    getRouteAdmin,
     getRouteArticleCreate,
     getRouteArticleDetails,
     getRouteArticleEdit,
-    getRouteArticles,
     getRouteForbidden,
+    getRouteArticles,
     getRouteMain,
     getRouteProfile,
 } from '@/shared/const/router';
@@ -57,7 +57,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         authOnly: true,
     },
     [AppRoutes.ADMIN_PANEL]: {
-        path: getRouteAdminPanel(),
+        path: getRouteAdmin(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.MANAGER, UserRole.ADMIN],
@@ -66,6 +66,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: getRouteForbidden(),
         element: <ForbiddenPage />,
     },
+    // last
     [AppRoutes.NOT_FOUND]: {
         path: '*',
         element: <NotFoundPage />,

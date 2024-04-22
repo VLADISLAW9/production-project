@@ -1,9 +1,10 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { AppImage } from './AppImage';
 
 export default {
-    title: 'component/AppImage',
+    title: 'shared/AppImage',
     component: AppImage,
     argTypes: {
         backgroundColor: { control: 'color' },

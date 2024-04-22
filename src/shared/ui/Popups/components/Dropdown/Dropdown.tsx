@@ -23,10 +23,7 @@ interface DropdownProps {
 
 export function Dropdown(props: DropdownProps) {
     const {
-        className,
-        trigger,
-        items,
-        direction = 'bottom right',
+        className, trigger, items, direction = 'bottom right',
     } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
@@ -52,10 +49,10 @@ export function Dropdown(props: DropdownProps) {
                     if (item.href) {
                         return (
                             <Menu.Item
-                                key={`dropdown-key-${index}`}
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
+                                key={`dropdown-key-${index}`}
                             >
                                 {content}
                             </Menu.Item>

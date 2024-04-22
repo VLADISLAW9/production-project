@@ -1,21 +1,20 @@
 import {
-    ImgHTMLAttributes, ReactElement, memo, useLayoutEffect, useState,
+    ImgHTMLAttributes, memo, ReactElement, useLayoutEffect, useState,
 } from 'react';
 
-interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-  className?: string
-  fallback?: ReactElement
-  errorFallback?: ReactElement
+interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement>{
+    className?: string;
+    fallback?: ReactElement;
+    errorFallback?: ReactElement;
 }
 
 export const AppImage = memo((props: AppImageProps) => {
     const {
         className,
         src,
-        width,
         alt = 'image',
-        fallback,
         errorFallback,
+        fallback,
         ...otherProps
     } = props;
     const [isLoading, setIsLoading] = useState(true);
@@ -31,8 +30,7 @@ export const AppImage = memo((props: AppImageProps) => {
             setIsLoading(false);
             setHasError(true);
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [src]);
 
     if (isLoading && fallback) {
         return fallback;
@@ -43,12 +41,6 @@ export const AppImage = memo((props: AppImageProps) => {
     }
 
     return (
-        <img
-            src={src}
-            width={width}
-            className={className}
-            alt={alt}
-            {...otherProps}
-        />
+        <img className={className} src={src} alt={alt} {...otherProps} />
     );
 });
