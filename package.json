@@ -83,7 +83,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.6.7",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "eslint-plugin-vladislaw9-plugin": "^0.0.9",
+    "eslint-plugin-vladislaw9-plugin": "^0.0.10",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
     "html-webpack-plugin": "^5.5.0",
