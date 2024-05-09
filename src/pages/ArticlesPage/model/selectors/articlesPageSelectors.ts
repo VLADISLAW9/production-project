@@ -25,6 +25,6 @@ export const getArticlesPageSearch = (state: StateSchema) =>
 export const getArticlesPageType = (state: StateSchema) =>
     state.articlesPage?.type ?? ArticleType.ALL;
 
-export const [useArticleItemById, getArticleItemById] = buildSelector(
+export const [useArticleItemById] = buildSelector(
     (state, id: string) => state.articlesPage?.entities[id],
 );

@@ -15,8 +15,8 @@ import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRating } from '@/features/articleRating';
-import { Counter } from '@/entities/Counter';
 import { getFeatureFlag } from '@/shared/lib/features';
+import { Counter } from '@/entities/Counter';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -32,7 +32,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { id } = useParams<{ id: string }>();
     const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
     const isCounterEnabled = getFeatureFlag('isCounterEnabled');
-
     if (!id) {
         return null;
     }
