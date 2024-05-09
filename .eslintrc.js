@@ -94,7 +94,7 @@ module.exports = {
         'react/jsx-max-props-per-line': [
             'error',
             {
-                maximum: 3,
+                maximum: 4,
                 when: 'multiline',
             },
         ],
