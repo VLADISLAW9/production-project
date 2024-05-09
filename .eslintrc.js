@@ -98,6 +98,7 @@ module.exports = {
                 when: 'multiline',
             },
         ],
+        'react/no-unstable-nested-components': 'warn',
     },
     globals: {
         __IS_DEV__: true,
