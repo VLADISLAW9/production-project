@@ -2,8 +2,6 @@ import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Dropdown } from '@/shared/ui/Popups';
 import {
     getUserAuthData,
     isUserAdmin,
@@ -11,6 +9,8 @@ import {
     userActions,
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 
 interface AvatarDropdownProps {
     className?: string;
