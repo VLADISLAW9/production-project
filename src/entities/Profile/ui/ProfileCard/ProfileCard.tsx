@@ -4,9 +4,10 @@ import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Loader } from '@/shared/ui/deprecated/Loader';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { TextAlign } from '@/shared/ui/deprecated/Text';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 
@@ -71,7 +72,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 ])}
             >
                 <Text
-                    theme={TextTheme.ERROR}
+                    variant="error"
                     title={t('Произошла ошибка при загрузке профиля')}
                     text={t('Попробуйте обновить страницу')}
                     align={TextAlign.CENTER}

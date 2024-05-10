@@ -11,8 +11,8 @@ import { getArticleComments } from '../../model/slices/articleDetailsCommentsSli
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { VStack } from '@/shared/ui/deprecated/Stack';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 
 interface ArticleDetailsCommentsProps {
@@ -41,7 +41,7 @@ export const ArticleDetailsComments = memo(
 
         return (
             <VStack gap="16" max className={classNames('', {}, [className])}>
-                <Text size={TextSize.L} title={t('Комментарии')} />
+                <Text size="l" title={t('Комментарии')} />
                 <Suspense fallback={<Loader />}>
                     <AddCommentForm onSendComment={onSendComment} />
                 </Suspense>

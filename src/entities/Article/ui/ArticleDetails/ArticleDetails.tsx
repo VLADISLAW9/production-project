@@ -23,8 +23,9 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
+
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 
@@ -102,7 +103,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else if (error) {
         content = (
             <Text
-                align={TextAlign.CENTER}
+                align="center"
                 title={t('Произошла ошибка при загрузке статьи.')}
             />
         );
@@ -121,8 +122,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                         className={cls.title}
                         title={article?.title}
                         text={article?.subtitle}
-                        size={TextSize.L}
+                        size="l"
                     />
+
                     <HStack gap="8" className={cls.articleInfo}>
                         <Icon className={cls.icon} Svg={EyeIcon} />
                         <Text text={String(article?.views)} />

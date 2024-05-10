@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { StarRating } from '@/shared/ui/deprecated/StarRating';
 import { Modal } from '@/shared/ui/deprecated/Modal';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';

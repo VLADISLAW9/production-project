@@ -20,8 +20,8 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -125,7 +125,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                     validateErrors.map((err) => (
                         <Text
                             key={err}
-                            theme={TextTheme.ERROR}
+                            variant="error"
                             text={validateErrorTranslates[err]}
                             data-testid="EditableProfileCard.Error"
                         />

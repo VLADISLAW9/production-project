@@ -16,7 +16,7 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { ToggleFeatures } from '@/shared/lib/features';
 import { ArticleRating } from '@/features/articleRating';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleDetailsPageProps {
     className?: string;

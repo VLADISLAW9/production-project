@@ -6,7 +6,7 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article } from '../../model/types/article';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleListProps {
     className?: string;
@@ -45,7 +45,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     cls[view],
                 ])}
             >
-                <Text size={TextSize.L} title={t('Статьи не найдены')} />
+                <Text size="l" title={t('Статьи не найдены')} />
             </div>
         );
     }

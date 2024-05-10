@@ -9,8 +9,8 @@ import {
     userActions,
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -34,28 +34,30 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         return null;
     }
 
+    const items = [
+        ...(isAdminPanelAvailable
+            ? [
+                  {
+                      content: t('Админка'),
+                      href: getRouteAdmin(),
+                  },
+              ]
+            : []),
+        {
+            content: t('Профиль'),
+            href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('Выйти'),
+            onClick: onLogout,
+        },
+    ];
+
     return (
         <Dropdown
             direction="bottom left"
             className={classNames('', {}, [className])}
-            items={[
-                ...(isAdminPanelAvailable
-                    ? [
-                          {
-                              content: t('Админка'),
-                              href: getRouteAdmin(),
-                          },
-                      ]
-                    : []),
-                {
-                    content: t('Профиль'),
-                    href: getRouteProfile(authData.id),
-                },
-                {
-                    content: t('Выйти'),
-                    onClick: onLogout,
-                },
-            ]}
+            items={items}
             trigger={
                 <Avatar fallbackInverted size={30} src={authData.avatar} />
             }

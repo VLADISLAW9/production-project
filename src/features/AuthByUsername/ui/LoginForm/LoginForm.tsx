@@ -14,7 +14,7 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 
@@ -63,7 +63,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 {error && (
                     <Text
                         text={t('Вы ввели неверный логин или пароль')}
-                        theme={TextTheme.ERROR}
+                        variant="error"
                     />
                 )}
                 <Input
