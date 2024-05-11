@@ -23,7 +23,7 @@ Primary.args = {
         username: 'admin',
         age: 22,
         country: Country.Ukraine,
-        lastname: 'ulbi tv',
+        lastname: '3412',
         first: 'asd',
         city: 'asf',
         currency: Currency.USD,

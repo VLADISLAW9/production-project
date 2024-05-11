@@ -9,7 +9,7 @@ const data = {
     username: 'admin',
     age: 22,
     country: Country.Ukraine,
-    lastname: 'vlad',
+    lastname: '3412',
     first: 'asd',
     city: 'asf',
     currency: Currency.USD,

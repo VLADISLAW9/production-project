@@ -1,40 +1,42 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
-import { Text } from '@/shared/ui/redesigned/Text';
-import { saveJsonSetting, useJsonSetting } from '@/entities/User';
+import { Modal } from '@/shared/ui/redesigned/Modal';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { saveJsonSettings, useJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
-import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 
 export const ArticlePageGreeting = memo(() => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
-    const { isArticlePageWasOpened } = useJsonSetting();
+    const { isArticlesPageWasOpened } = useJsonSettings();
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (!isArticlePageWasOpened) {
+        if (!isArticlesPageWasOpened) {
             setIsOpen(true);
-            dispatch(saveJsonSetting({ isArticlePageWasOpened: true }));
+            dispatch(saveJsonSettings({ isArticlesPageWasOpened: true }));
         }
-    }, [dispatch, isArticlePageWasOpened]);
+    }, [dispatch, isArticlesPageWasOpened]);
 
-    const onClose = () => {
-        setIsOpen(false);
-    };
+    const onClose = () => setIsOpen(false);
 
     const text = (
         <Text
             title={t('Добро пожаловать на страницу статей')}
             text={t(
-                'Здесь вы можете найти интересные статьи о разработке и программировании и не только.',
+                'Здесь вы можете искать и просматривать статьи на различные темы',
             )}
         />
     );
 
     if (isMobile) {
-        return <Drawer>{text}</Drawer>;
+        return (
+            <Drawer lazy isOpen={isOpen} onClose={onClose}>
+                {text}
+            </Drawer>
+        );
     }
 
     return (

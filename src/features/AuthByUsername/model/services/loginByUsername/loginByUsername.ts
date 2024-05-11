@@ -20,6 +20,7 @@ export const loginByUsername = createAsyncThunk<
         if (!response.data) {
             throw new Error();
         }
+
         dispatch(userActions.setAuthData(response.data));
         return response.data;
     } catch (e) {

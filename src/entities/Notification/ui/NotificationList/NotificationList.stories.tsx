@@ -29,17 +29,17 @@ Normal.parameters = {
                 {
                     id: '1',
                     title: 'Уведомление',
-                    description: 'Поставь лайк и оставь комментарий ',
+                    description: '3412',
                 },
                 {
                     id: '2',
                     title: 'Уведомление 2',
-                    description: 'Поставь лайк и оставь комментарий ',
+                    description: '3412',
                 },
                 {
                     id: '3',
                     title: 'Уведомление 3',
-                    description: 'Поставь лайк и оставь комментарий ',
+                    description: '3412',
                 },
             ],
         },

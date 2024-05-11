@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { UserSchema, User } from '../types/user';
 import { setFeatureFlags } from '@/shared/lib/features';
-import { saveJsonSetting } from '../services/saveJsonSettings';
+import { saveJsonSettings } from '../services/saveJsonSettings';
 import { JsonSettings } from '../types/jsonSettings';
 import { initAuthData } from '../services/initAuthData';
 
@@ -26,7 +26,7 @@ export const userSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(
-            saveJsonSetting.fulfilled,
+            saveJsonSettings.fulfilled,
             (state, { payload }: PayloadAction<JsonSettings>) => {
                 if (state.authData) {
                     state.authData.jsonSettings = payload;
@@ -47,5 +47,6 @@ export const userSlice = createSlice({
     },
 });
 
+// Action creators are generated for each case reducer function
 export const { actions: userActions } = userSlice;
 export const { reducer: userReducer } = userSlice;

@@ -60,9 +60,9 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
             >
                 <HListBox.Button disabled={readonly} className={cls.trigger}>
                     <Button
-                        addonRight={<Icon Svg={ArrowIcon} />}
                         variant="filled"
                         disabled={readonly}
+                        addonRight={<Icon Svg={ArrowIcon} />}
                     >
                         {selectedItem?.content ?? defaultValue}
                     </Button>

@@ -2,11 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { getFeatureFlag, updateFeatureFlag } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/redesigned/Text';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface UiDesignSwitcherProps {
@@ -37,10 +37,10 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
             setIsLoading(true);
             await dispatch(
                 updateFeatureFlag({
+                    userId: authData.id,
                     newFeatures: {
                         isAppRedesigned: value === 'new',
                     },
-                    userId: authData.id,
                 }),
             ).unwrap();
             setIsLoading(false);
@@ -48,15 +48,15 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
     };
 
     return (
-        <HStack gap="16">
-            <Text text={t('Внешний вид')} />
+        <HStack>
+            <Text text={t('Вариант интерфейса')} />
             {isLoading ? (
                 <Skeleton width={100} height={40} />
             ) : (
                 <ListBox
+                    onChange={onChange}
                     items={items}
                     value={isAppRedesigned ? 'new' : 'old'}
-                    onChange={onChange}
                     className={className}
                 />
             )}

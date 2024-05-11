@@ -31,6 +31,7 @@ export function TestProvider(props: TestProviderProps) {
         asyncReducers,
         theme = Theme.LIGHT,
     } = options;
+
     return (
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider

@@ -5,17 +5,17 @@ import { getUserAuthData } from '../selectors/getUserAuthData/getUserAuthData';
 import { getJsonSettings } from '../selectors/jsonSettings';
 import { setJsonSettingsMutation } from '../../api/userApi';
 
-export const saveJsonSetting = createAsyncThunk<
+export const saveJsonSettings = createAsyncThunk<
     JsonSettings,
     JsonSettings,
     ThunkConfig<string>
->('user/saveJsonSetting', async (newJsonSettings, thunkApi) => {
+>('user/saveJsonSettings', async (newJsonSettings, thunkApi) => {
     const { rejectWithValue, getState, dispatch } = thunkApi;
     const userData = getUserAuthData(getState());
     const currentSettings = getJsonSettings(getState());
 
     if (!userData) {
-        return rejectWithValue('no user data');
+        return rejectWithValue('');
     }
 
     try {
@@ -30,12 +30,12 @@ export const saveJsonSetting = createAsyncThunk<
         ).unwrap();
 
         if (!response.jsonSettings) {
-            return rejectWithValue('no response data');
+            return rejectWithValue('');
         }
 
         return response.jsonSettings;
     } catch (e) {
         console.log(e);
-        return rejectWithValue('error');
+        return rejectWithValue('');
     }
 });
