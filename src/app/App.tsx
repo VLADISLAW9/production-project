@@ -8,7 +8,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { AppRouter } from './providers/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
-import { MainLayout } from '@/shared/layouts/MainLayouts';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 function App() {
     const { theme } = useTheme();
