@@ -762,7 +762,7 @@
       },
       "avatar": "https://mobimg.b-cdn.net/v3/fetch/22/2207633df03a819cd72889249c8361a8.jpeg?w=1470&r=0.5625",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true,
@@ -820,13 +820,13 @@
   "profile": [
     {
       "id": "1",
-      "first": "timurasdasd",
-      "lastname": "ulbi",
+      "first": "vlad",
+      "lastname": "duplinskiy",
       "age": 465,
-      "currency": "RUB",
+      "currency": "EUR",
       "country": "Belarus",
       "city": "Moscow",
-      "username": "admin213",
+      "username": "fame",
       "avatar": "https://mobimg.b-cdn.net/v3/fetch/22/2207633df03a819cd72889249c8361a8.jpeg?w=1470&r=0.5625"
     },
     {
