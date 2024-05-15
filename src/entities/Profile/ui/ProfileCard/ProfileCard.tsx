@@ -3,12 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { Profile } from '../../model/types/profile';
-import { ToggleFeatures } from '@/shared/lib/features';
-import {
-    ProfileCardDeprecated,
-    ProfileCardDeprecatedError,
-    ProfileCardDeprecatedLoader,
-} from '../ProfileCardDeprecated/ProfileCardDeprecated';
+
+
 import {
     ProfileCardRedesigned,
     ProfileCardRedesignedError,
@@ -37,29 +33,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <ToggleFeatures
-                feature="isAppRedesigned"
-                on={<ProfileCardRedesignedSkeleton />}
-                off={<ProfileCardDeprecatedLoader />}
-            />
+            <ProfileCardRedesignedSkeleton />
         );
     }
 
     if (error) {
         return (
-            <ToggleFeatures
-                feature="isAppRedesigned"
-                on={<ProfileCardRedesignedError />}
-                off={<ProfileCardDeprecatedError />}
-            />
+            <ProfileCardRedesignedError />
         );
     }
 
     return (
-        <ToggleFeatures
-            feature="isAppRedesigned"
-            on={<ProfileCardRedesigned {...props} />}
-            off={<ProfileCardDeprecated {...props} />}
-        />
+        <ProfileCardRedesigned {...props} />
     );
 };
