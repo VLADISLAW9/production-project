@@ -108,4 +108,11 @@
   &.BIG {
     width: 100%;
   }
+
+  &.SMALL {
+    .card {
+      height: 350px;
+      width: 240px;
+    }
+  }
 }
