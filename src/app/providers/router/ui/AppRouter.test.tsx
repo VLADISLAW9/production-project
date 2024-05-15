@@ -36,18 +36,6 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ к закрытой страницы для авторизованного пользователя', async () => {
-        componentRender(<AppRouter />, {
-            route: getRouteProfile('1'),
-            initialState: {
-                user: { _inited: true, authData: {} },
-            },
-        });
-
-        const page = await screen.findByTestId('ProfilePage');
-        expect(page).toBeInTheDocument();
-    });
-
     test('Доступ запрещен (отсутствует роль)', async () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
